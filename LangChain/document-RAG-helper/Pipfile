@@ -1,0 +1,38 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+black = "*"
+tiktoken = "*"
+openai = "*"
+unstructured = ">=0.10.30"
+nltk = "*"
+fastapi = "*"
+jinja2 = "*"
+uvicorn = "*"
+streamlit = "*"
+streamlit-chat = "*"
+tqdm = "*"
+isort = "*"
+langchainhub = "*"
+langchain = ">=0.2.0"
+langchain-community = ">=0.2.0"
+langsmith = "*"
+pillow = "*"
+langchain-pinecone = "*"
+langchain-chroma = ">=0.1.0"
+python-dotenv = "*"
+langchain-tavily = "*"
+markdown = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.12"
+python_full_version = "3.12.10"
+
+[pipenv]
+allow_prereleases = true
