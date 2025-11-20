@@ -21,10 +21,10 @@ def split_docs_by_markdown_headers(docs):
         for section in sections:
             content = section.page_content.strip()
 
-            # ✅ 在开头加上你要求的 "## " 作为 chunk 标记
+            # 在开头加上 "## " 作为 chunk 标记
             content = f"## {content}"
 
-            # ✅ 保留原文件来源
+            # metadata里保留原文件来源
             chunk_doc = Document(
                 page_content=content,
                 metadata={"source": doc.metadata.get("source")}
