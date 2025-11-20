@@ -6,7 +6,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
 from pinecone import Pinecone
 
@@ -98,7 +98,7 @@ def run_llm(query: str):
     # 5) 使用 LCEL 构建 RAG Chain（LangChain 1.0.5）
     rag_chain = (
         RunnableParallel({
-            "context": retriever,
+            "context": RunnableLambda(lambda _: docs),
             "question": RunnablePassthrough(),
         })
         | prompt
